@@ -4,12 +4,14 @@ inputs:
   app-name:
     description: Name of the webapp
     required: true
-  registry: 
-    description: Provides current name of the registry
-    required: true   
-  clean-branch-name: 
-    description: Branch name that was pushed to registry
+  satel-docker-user:
+    description: Username for satel docker registry
+    required: true
+  satel-docker-pass:
+    description: Password for satel docker registry 
     required: true  
+  satel-registry:
+    description: Satel registry address  
 runs:
   using: node16
   main: dist/index.js
