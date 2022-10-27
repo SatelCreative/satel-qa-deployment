@@ -1,0 +1,15 @@
+name: Satel-webapp-qa-deployment
+description: Deploys webapp to qa environment
+inputs:
+  app-name:
+    description: Name of the webapp
+    required: true
+  registry: 
+    description: Provides current name of the registry
+    required: true   
+  clean-branch-name: 
+    description: Branch name that was pushed to registry
+    required: true  
+runs:
+  using: node16
+  main: dist/index.js
