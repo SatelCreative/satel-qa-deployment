@@ -13,10 +13,13 @@ inputs:
   satel-registry:
     description: Satel registry address  
     required: true  
+  clean_branch_name:  
+    description: Clean branch name
+    required: true  
 
 runs:
   using: "composite"
   steps:
     - run: ${{ github.action_path }}/deploy_qa.sh ${{ inputs.app-name }} ${{ inputs.satel-docker-user }}
-        ${{ inputs.satel-docker-pass }} ${{ inputs.satel-registry }} 
+        ${{ inputs.satel-docker-pass }} ${{ inputs.satel-registry }} ${{ inputs.clean_branch_name }} 
       shell: bash
