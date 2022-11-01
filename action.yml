@@ -12,6 +12,7 @@ inputs:
     required: true  
   satel-registry:
     description: Satel registry address  
+    required: true  
 
 runs:
   using: "composite"
