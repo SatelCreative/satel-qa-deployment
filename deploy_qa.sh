@@ -7,8 +7,6 @@ CLEAN_BRANCH_NAME=$5
 
 export CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME 
 
-echo "CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME"
-
 echo "Deploy to ${APP_NAME}-qa.satelapps.com" 
 export DOCKER_TLS_VERIFY='1' 
 export DOCKER_HOST='tcp://34.234.172.171:2376'
