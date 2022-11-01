@@ -16,6 +16,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/deploy_qa.sh ${{ inputs.app-name }} 
+    - run: ${{ github.action_path }}/deploy_qa.sh ${{ inputs.app-name }} ${{ inputs.satel-docker-user }}
         ${{ inputs.satel-docker-pass }} ${{ inputs.satel-registry }} 
       shell: bash
