@@ -13,7 +13,7 @@ inputs:
   satel-registry:
     description: Satel registry address  
     required: true  
-  clean_branch_name:  
+  clean-branch-name:  
     description: Clean branch name
     required: true  
 
