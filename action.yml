@@ -12,6 +12,10 @@ inputs:
     required: true  
   satel-registry:
     description: Satel registry address  
+
 runs:
-  using: node16
-  main: dist/index.js
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/deploy_client.sh ${{ inputs.app-name }} 
+        ${{ inputs.satel-docker-pass }} ${{ inputs.satel-registry }} 
+      shell: bash
