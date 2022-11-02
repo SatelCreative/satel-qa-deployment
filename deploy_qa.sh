@@ -5,9 +5,7 @@ DOCKER_PASS=$3
 REGISTRY=$4
 CLEAN_BRANCH_NAME=$5
 
-export CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME 
-
-echo "CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME"
+export CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME # set this env variable for docker compose
 
 echo "Deploy to ${APP_NAME}-qa.satelapps.com" 
 export DOCKER_TLS_VERIFY='1' 
