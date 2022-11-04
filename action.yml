@@ -1,5 +1,5 @@
-name: Satel-webapp-qa-deployment
-description: Deploys webapp to qa environment
+name: Satel-webapp-QA-deployment
+description: Deploys webapp to QA VM/environment
 inputs:
   app-name:
     description: Name of the webapp
