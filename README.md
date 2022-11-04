@@ -9,16 +9,16 @@ on:
     branches:
       - main  
 deploy-to-qa:
-    name: Deploy webapp to qa
+    name: Deploy webapp to QA vm
     needs: [generate-variables, build-client, build-server]
     if: github.ref == 'refs/heads/main' # run only on main
     runs-on: <host_name>
     steps:
-      - name: Deploy to QA
-        uses:  SatelCreative/satel-qa-deployment@feature/webapp-deployment-shell
+      - name: Deploy to QA vm
+        uses:  SatelCreative/satel-qa-deployment@v1
         with:
           app-name: <name-of-the-app>
-          clean-branch-name: ${{ needs.registry-push.outputs.clean_branch_name }}
+          clean-branch-name: ${{ needs.registry-push.outputs.clean-branch-name }}
           satel-docker-user: ${{ secrets.SATEL_DOCKER_USER }}
           satel-docker-pass: ${{ secrets.SATEL_DOCKER_PASS }}
           satel-registry: docker.satel.ca
