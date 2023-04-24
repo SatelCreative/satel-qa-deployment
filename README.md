@@ -12,13 +12,13 @@ deploy-to-qa:
     name: Deploy webapp to QA vm
     needs: [generate-variables, build-client, build-server]
     if: github.ref == 'refs/heads/main' # run only on main
-    # host_name is self-hosted or the name of server where the action runner is hosted, cosmicray for example
-    runs-on: <host_name>
+    # host_name is self-hosted or the name of server where the action runner is hosted, self-hosted for example
+    runs-on: <host-name>
     steps:
       - name: Deploy to QA vm
         uses:  SatelCreative/satel-qa-deployment@v1
         with:
-          app-name: <name-of-the-app>
+          app-name: <app-name>
           # clean-branch-name parameter is set in a previous step  
           clean-branch-name: ${{ needs.registry-push.outputs.clean-branch-name }}
           # satel-docker-user & satel-docker-pass are secrets added from the settings
