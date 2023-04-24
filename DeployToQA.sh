@@ -1,9 +1,4 @@
 #!/bin/bash
-APP_NAME=$1
-DOCKER_USER=$2
-DOCKER_PASS=$3
-REGISTRY=$4
-CLEAN_BRANCH_NAME=$5
 
 export CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME # set this env variable for docker compose
 

@@ -20,6 +20,12 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/DeployToQA.sh ${{ inputs.app-name }} ${{ inputs.satel-docker-user }}
-        ${{ inputs.satel-docker-pass }} ${{ inputs.satel-registry }} ${{ inputs.clean-branch-name }} 
+    - name: Deploy to QA VM
+      env: 
+        APP_NAME: ${{ inputs.app-name }}
+        DOCKER_USER: ${{ inputs.satel-docker-user }}
+        DOCKER_PASS: ${{ inputs.satel-docker-pass }}
+        REGISTRY: ${{ inputs.satel-registry }}
+        CLEAN_BRANCH_NAME: ${{ inputs.clean-branch-name }} 
+      run: ${{ github.action_path }}/DeployToQA.sh  
       shell: bash
