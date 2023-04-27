@@ -2,7 +2,7 @@
 
 export CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME # set this env variable for docker compose
 
-echo "Deploy to ${APP_NAME}-qa.satelapps.com" 
+echo "Deploy to ${APP_NAME}-qa.satel.ca" 
 export DOCKER_TLS_VERIFY='1' 
 export DOCKER_HOST='tcp://34.234.172.171:2376'
 export DOCKER_CERT_PATH='/home/satel/.docker/machine/machines/satel-webapps-qa'
