@@ -16,6 +16,9 @@ inputs:
   clean-branch-name:  
     description: Clean branch name
     required: true  
+  work-dir:
+    description: work directory
+    required: false
 
 runs:
   using: "composite"
@@ -27,5 +30,6 @@ runs:
         DOCKER_PASS: ${{ inputs.satel-docker-pass }}
         REGISTRY: ${{ inputs.satel-registry }}
         CLEAN_BRANCH_NAME: ${{ inputs.clean-branch-name }} 
+        WORK_DIR: ${{ inputs.work-dir }}
       run: ${{ github.action_path }}/DeployToQA.sh  
       shell: bash

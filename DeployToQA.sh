@@ -2,6 +2,11 @@
 
 export CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME # set this env variable for docker compose
 
+if [[ -n $WORK_DIR ]]
+then
+    cd $WORK_DIR
+fi   
+
 echo "Deploy to ${APP_NAME}-qa.satel.ca" 
 export DOCKER_TLS_VERIFY='1' 
 export DOCKER_HOST='tcp://34.234.172.171:2376'
