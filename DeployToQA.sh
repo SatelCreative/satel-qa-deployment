@@ -4,7 +4,7 @@ export CLEAN_BRANCH_NAME=$CLEAN_BRANCH_NAME # set this env variable for docker c
 
 if [[ -n $WORK_DIR ]]
 then
-    cd WORK_DIR
+    cd $WORK_DIR
 fi   
 
 echo "Deploy to ${APP_NAME}-qa.satel.ca" 
