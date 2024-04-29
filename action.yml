@@ -19,7 +19,7 @@ inputs:
   work-dir:
     description: Work directory
     required: false
-  registry_type:
+  registry-type:
     description: Type of registry
     required: false
 
