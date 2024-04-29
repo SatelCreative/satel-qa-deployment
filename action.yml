@@ -34,6 +34,6 @@ runs:
         REGISTRY: ${{ inputs.satel-registry }}
         CLEAN_BRANCH_NAME: ${{ inputs.clean-branch-name }} 
         WORK_DIR: ${{ inputs.work-dir }}
-        REGISTRY_TYPE: ${{ inputs.registry_type }}
+        REGISTRY_TYPE: ${{ inputs.registry-type }}
       run: ${{ github.action_path }}/DeployToQA.sh  
       shell: bash
