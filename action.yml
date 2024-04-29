@@ -6,18 +6,21 @@ inputs:
     required: true
   satel-docker-user:
     description: Username for satel docker registry
-    required: true
+    required: false
   satel-docker-pass:
     description: Password for satel docker registry 
-    required: true  
+    required: false  
   satel-registry:
     description: Satel registry address  
-    required: true  
+    required: false 
   clean-branch-name:  
     description: Clean branch name
     required: true  
   work-dir:
-    description: work directory
+    description: Work directory
+    required: false
+  registry-type:
+    description: Type of registry
     required: false
 
 runs:
@@ -31,5 +34,6 @@ runs:
         REGISTRY: ${{ inputs.satel-registry }}
         CLEAN_BRANCH_NAME: ${{ inputs.clean-branch-name }} 
         WORK_DIR: ${{ inputs.work-dir }}
+        REGISTRY_TYPE: ${{ inputs.registry-type }}
       run: ${{ github.action_path }}/DeployToQA.sh  
       shell: bash

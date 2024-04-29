@@ -11,5 +11,9 @@ echo "Deploy to ${APP_NAME}-qa.satel.ca"
 export DOCKER_TLS_VERIFY='1' 
 export DOCKER_HOST='tcp://34.234.172.171:2376'
 export DOCKER_CERT_PATH='/home/satel/.docker/machine/machines/satel-webapps-qa'
-docker login --username=$DOCKER_USER --password=$DOCKER_PASS $REGISTRY
+
+if [[ ! $REGISTRY_TYPE ]]; then
+    docker login --username=$DOCKER_USER --password=$DOCKER_PASS $REGISTRY
+fi
+
 docker stack deploy --with-registry-auth -c docker-compose.qa.yml ${APP_NAME}
