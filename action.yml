@@ -6,18 +6,18 @@ inputs:
     required: true
   satel-docker-user:
     description: Username for satel docker registry
-    required: true
+    required: false
   satel-docker-pass:
     description: Password for satel docker registry 
-    required: true  
+    required: false  
   satel-registry:
     description: Satel registry address  
-    required: true  
+    required: false 
   clean-branch-name:  
     description: Clean branch name
     required: true  
   work-dir:
-    description: work directory
+    description: Work directory
     required: false
   registry_type:
     description: Type of registry
