@@ -22,22 +22,16 @@ inputs:
   registry-type:
     description: Type of registry
     required: false
-  db_username:
-    required: false
-    type: string
-  db_password:
-    required: false
-    type: string    
-    
+
 
 runs:
   using: "composite"
   steps:
-    - name: Print envs
-      run: | 
-        echo MONGO_INITDB_ROOT_USERNAME: ${{ inputs.db_username }} ${{ env.MONGO_INITDB_ROOT_USERNAME }}
-        echo MONGO_INITDB_ROOT_PASSWORD: ${{ inputs.db_password }} ${{ env.MONGO_INITDB_ROOT_PASSWORD }}
-      shell: bash  
+    # - name: Print envs
+    #   run: | 
+    #     echo MONGO_INITDB_ROOT_USERNAME: ${{ inputs.db_username }} ${{ env.MONGO_INITDB_ROOT_USERNAME }}
+    #     echo MONGO_INITDB_ROOT_PASSWORD: ${{ inputs.db_password }} ${{ env.MONGO_INITDB_ROOT_PASSWORD }}
+    #   shell: bash  
         
     - name: Deploy to QA VM
       env: 
@@ -48,7 +42,7 @@ runs:
         CLEAN_BRANCH_NAME: ${{ inputs.clean-branch-name }} 
         WORK_DIR: ${{ inputs.work-dir }}
         REGISTRY_TYPE: ${{ inputs.registry-type }}
-        MONGO_INITDB_ROOT_USERNAME: ${{ inputs.db_username }}  
-        MONGO_INITDB_ROOT_PASSWORD: ${{ inputs.db_password }}
+        # MONGO_INITDB_ROOT_USERNAME: ${{ inputs.db_username }}  
+        # MONGO_INITDB_ROOT_PASSWORD: ${{ inputs.db_password }}
       run: ${{ github.action_path }}/DeployToQA.sh  
       shell: bash
