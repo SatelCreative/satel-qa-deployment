@@ -39,14 +39,16 @@ runs:
         echo MONGO_INITDB_ROOT_PASSWORD: ${{ inputs.db_password }} ${{ env.MONGO_INITDB_ROOT_PASSWORD }}
       shell: bash  
         
-    # - name: Deploy to QA VM
-    #   env: 
-    #     APP_NAME: ${{ inputs.app-name }}
-    #     DOCKER_USER: ${{ inputs.satel-docker-user }}
-    #     DOCKER_PASS: ${{ inputs.satel-docker-pass }}
-    #     REGISTRY: ${{ inputs.satel-registry }}
-    #     CLEAN_BRANCH_NAME: ${{ inputs.clean-branch-name }} 
-    #     WORK_DIR: ${{ inputs.work-dir }}
-    #     REGISTRY_TYPE: ${{ inputs.registry-type }}
-    #   run: ${{ github.action_path }}/DeployToQA.sh  
-    #   shell: bash
+    - name: Deploy to QA VM
+      env: 
+        APP_NAME: ${{ inputs.app-name }}
+        DOCKER_USER: ${{ inputs.satel-docker-user }}
+        DOCKER_PASS: ${{ inputs.satel-docker-pass }}
+        REGISTRY: ${{ inputs.satel-registry }}
+        CLEAN_BRANCH_NAME: ${{ inputs.clean-branch-name }} 
+        WORK_DIR: ${{ inputs.work-dir }}
+        REGISTRY_TYPE: ${{ inputs.registry-type }}
+        MONGO_INITDB_ROOT_USERNAME: ${{ inputs.db_username }}  
+        MONGO_INITDB_ROOT_PASSWORD: ${{ inputs.db_password }}
+      run: ${{ github.action_path }}/DeployToQA.sh  
+      shell: bash
